@@ -1,0 +1,10 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#000000", "primaryBorderColor": "#000000", "lineColor": "#000000", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "edgeLabelBackground": "#ffffff", "fontFamily": "PingFang SC, Microsoft YaHei, sans-serif", "fontSize": "16px"}, "flowchart": {"curve": "linear", "htmlLabels": false, "useMaxWidth": false, "rankSpacing": 32, "nodeSpacing": 36, "padding": 14, "wrappingWidth": 340}}}%%
+flowchart TD
+    A["保存目标原文与追加约束"] --> B["提取当前任务<br/>识别待补字段与缺口"]
+    C["读取实际提交证据<br/>差分核算新增与补缺收益"] --> D["形成有效经验集合<br/>保留来源、路线与证据版本"]
+    B --> E["按缺口匹配与实绩计算基础分<br/>优先选择与当前问题有关的经验"]
+    D --> E
+    E --> F["扣除重复来源与路线的影响<br/>在上下文预算内选择互补经验"]
+    F --> G["组合目标、相关经验与历史摘要<br/>支持下一轮调查"]
+    classDef default fill:white,stroke:black,color:black;
+    linkStyle default stroke:black;

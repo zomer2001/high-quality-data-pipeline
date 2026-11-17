@@ -1,0 +1,11 @@
+@prefix : <urn:widesearch:analysis:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# The local projection contains only reviewed assertions applicable on the query date.
+# Classifications are not composition, dependencies or product similarity.
+:usesTechnology a owl:ObjectProperty ;
+    owl:propertyChainAxiom ( :usesTechnology rdfs:subClassOf ) .
+
+:sharedTechnology rdfs:comment
+    "Join two products' reviewed usesTechnology edges on the same technology ID; preserve both product scopes and all premises." .

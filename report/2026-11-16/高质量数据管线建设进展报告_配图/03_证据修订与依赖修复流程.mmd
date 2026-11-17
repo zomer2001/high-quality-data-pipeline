@@ -1,0 +1,11 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#000000", "primaryBorderColor": "#000000", "lineColor": "#000000", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "edgeLabelBackground": "#ffffff", "fontFamily": "PingFang SC, Microsoft YaHei, sans-serif", "fontSize": "16px"}, "flowchart": {"curve": "linear", "htmlLabels": false, "useMaxWidth": false, "rankSpacing": 32, "nodeSpacing": 36, "padding": 14, "wrappingWidth": 340}}}%%
+flowchart TD
+    A["核对新证据的时间、口径与用途<br/>确认本次修订范围"] --> B["更新指定用途的证据资格与版本"]
+    B --> C["沿实际读取依赖追踪影响<br/>定位相关任务、摘要与报告"]
+    C --> D["保留有效支持关系<br/>重新安排受影响任务"]
+    C --> E["重验关联采集经验<br/>重建失效的历史摘要"]
+    D --> F["按前置依赖执行修复<br/>汇总更新后的调查结果"]
+    E --> F
+    F --> G["校验读取版本并发布<br/>保留可回查的历史结果"]
+    classDef default fill:white,stroke:black,color:black;
+    linkStyle default stroke:black;

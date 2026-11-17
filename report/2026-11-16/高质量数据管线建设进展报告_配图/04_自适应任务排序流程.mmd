@@ -1,0 +1,11 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#000000", "primaryBorderColor": "#000000", "lineColor": "#000000", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "edgeLabelBackground": "#ffffff", "fontFamily": "PingFang SC, Microsoft YaHei, sans-serif", "fontSize": "16px"}, "flowchart": {"curve": "linear", "htmlLabels": false, "useMaxWidth": false, "rankSpacing": 32, "nodeSpacing": 36, "padding": 14, "wrappingWidth": 340}}}%%
+flowchart TD
+    A["读取目标覆盖与任务队列<br/>筛选前置依赖已满足的任务"] --> B["评估任务与目标的相关性<br/>计算尚未解决的字段缺口"]
+    A --> C["计算近期采集的信息增量<br/>为新任务融合相似任务收益"]
+    B --> D["综合优先级、相关性、缺口与收益<br/>加入等待补偿，计算调度得分"]
+    C --> D
+    D --> E["重排就绪任务<br/>按可用并行名额派发"]
+    E --> F["核算实际采集结果<br/>按批次区分新增、佐证和重复"]
+    F --> G["更新字段覆盖与近期收益<br/>驱动下一轮任务排序"]
+    classDef default fill:white,stroke:black,color:black;
+    linkStyle default stroke:black;

@@ -1,0 +1,30 @@
+{
+  "version": "product-technology-ontology-v1",
+  "comparison_requirements": {
+    "metric": ["version", "conditions", "valid_from", "valid_to", "statistic", "nature"],
+    "capability": ["version", "conditions", "valid_from", "valid_to", "nature"],
+    "field": ["version", "valid_from", "valid_to", "nature"],
+    "relation": ["version", "valid_from", "valid_to", "nature"],
+    "event": ["version", "valid_from", "valid_to", "event_id", "event_state", "nature"]
+  },
+  "evidence_requirements": {
+    "source_statement": {"kinds": ["source_record", "vendor_declaration", "test_report", "independent_test", "completion_record"], "independent_origins": 1},
+    "vendor_claim": {"kinds": ["vendor_declaration"], "independent_origins": 1},
+    "measurement": {"kinds": ["test_report", "independent_test"], "independent_origins": 1},
+    "independent_retest": {"kinds": ["independent_test"], "independent_origins": 2},
+    "event_completed": {"kinds": ["completion_record"], "independent_origins": 1}
+  },
+  "condition_aliases": {
+    "带宽": "bandwidth", "温度": "temperature", "载荷": "payload",
+    "测试方法": "test_method", "环境": "environment"
+  },
+  "rules": {
+    "identity": "Different canonical subjects or predicates are separate facts",
+    "scope": "Only fully specified, matching required contexts are comparable",
+    "time": "Publication time never substitutes for effective time",
+    "quantity": "Convert compatible linear units; keep qualifiers and intervals",
+    "evidence": "Check verified evidence scope and formation origins per assertion nature",
+    "transition": "Planned or underway to completed requires matching completion evidence",
+    "taxonomy": "Subtype paths classify concepts; they do not assert product implementation"
+  }
+}

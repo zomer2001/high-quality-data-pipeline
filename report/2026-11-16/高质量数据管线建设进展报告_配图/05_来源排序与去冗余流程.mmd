@@ -1,0 +1,11 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#000000", "primaryBorderColor": "#000000", "lineColor": "#000000", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "edgeLabelBackground": "#ffffff", "fontFamily": "PingFang SC, Microsoft YaHei, sans-serif", "fontSize": "16px"}, "flowchart": {"curve": "linear", "htmlLabels": false, "useMaxWidth": false, "rankSpacing": 32, "nodeSpacing": 36, "padding": 14, "wrappingWidth": 340}}}%%
+flowchart TD
+    A["接入搜索候选与近期已读资料"] --> B["BM25Plus词法匹配<br/>计算资料与目标的相关性"]
+    A --> C["按Jaccard近邻与超链接<br/>构建来源关联图"]
+    B --> D["个性化PageRank与Louvain<br/>计算关联得分、划分资料群"]
+    C --> D
+    D --> E["融合文本相关性与图结构信号<br/>形成候选资料效用分"]
+    E --> F["结合社区衰减与MMR贪心选择<br/>拓展来源方向并减少内容重复"]
+    F --> G["返回阅读顺序与排序依据<br/>实际采集后更新收益与已读状态"]
+    classDef default fill:white,stroke:black,color:black;
+    linkStyle default stroke:black;
